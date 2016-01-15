@@ -26,7 +26,7 @@ shinyServer(function(input, output) {
   output$liftabril<-renderPrint({
     x<-input$select
     y<-input$select2
-    paste("Lift",round(round(a_matrix_abr[x,y], digits=4)/(round(a_matrix_abr[x,x], digits=4)*round(a_matrix_abr[y,y], digits=4)),digits=4))
+    paste("Lift",round(round(a_matrix_abr[x,y]/a_matrix_abr[x,x], digits=4)/round(a_matrix_abr[y,y], digits=4),digits=4))
   })
   
   output$tablanamecat1abril<-renderText({
